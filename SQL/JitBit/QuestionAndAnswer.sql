@@ -39,7 +39,7 @@ select
 	  d.[Name] 'DepartmentName'
 	, Count(e.EmployeeID) 'EmployeeCount'
 from jitbit.Department d 
-inner join jitbit.Employee e on d.DepartmentID = e.DepartmentID
+left join jitbit.Employee e on d.DepartmentID = e.DepartmentID
 group by d.DepartmentID, d.[Name]
 order by d.[Name]
 
